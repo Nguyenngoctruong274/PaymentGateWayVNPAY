@@ -1,0 +1,8 @@
+vnpay:
+  return_Url: http://localhost:8081/payment/callback
+  cancel_Url: http://localhost:8081/payment/cancel
+  vnp_Version: 2.1.0
+  vnp_Command: pay
+  vnp_TmnCode: N1I4LANL
+  vnp_CurrCode: VND
+  vnp_Url: https://sandbox.vnpayment.vn/paymentv2/vpcpay.html

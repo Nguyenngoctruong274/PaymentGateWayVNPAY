@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Tạo mới đơn hàng</title>
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    
+</head>
+<body style="font-size: 0.9rem;">
+<div class="container">
+    <div class="clearfix" style="padding-bottom: 1rem;">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" href="/tryitnow/">VNPAY DEMO</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/tryitnow/">Danh sách</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="/tryitnow/Home/CreateOrder">Tạo mới<span class="sr-only">(current)</span></a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+    <h3>Tạo mới đơn hàng</h3>
+    <div class="table-responsive">
+        <form action="/createOrder" id="frmCreateOrder" method="POST">
+            <div class="form-group">
+                <label for="language">Loại hàng hóa</label>
+                <select name="ordertype" id="ordertype" class="form-control">
+                    <option value="other">Nạp tiền điện thoại</option>
+                    <option value="billpayment">Thanh toán hóa đơn</option>
+                    <option value="fashion">Thời trang</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="ValidAmount">Số tiền</label>
+                <input type="text" class="form-control" placeholder="Enter Amount" name="amount" id="amount" required>
+                <div class="invalid-amount">
+                    Please Enter Amount
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="OrderDescription">Nội dung thanh toán</label>
+                <textarea class="form-control" cols="20" id="orderDescription" name="orderDescription" rows="2"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="bankcode">Ngân hàng</label>
+                <select name="bankcode" id="bankcode" class="form-control">
+                    <option value="">Không chọn</option>    
+                     <option value="VIETCAPITALBANK">VIETCAPITALBANK</option>
+                    <option value="SCB">Ngân hàng SCB</option>
+                    <option value="NCB">Ngân hàng NCB</option>
+                    <option value="SACOMBANK">Ngân hàng SacomBank  </option>
+                    <option value="EXIMBANK">Ngân hàng EximBank </option>
+                    <option value="MSBANK">Ngân hàng MSBANK </option>
+                    <option value="NAMABANK">Ngân hàng NamABank </option>
+                    <option value="VNMART"> Ví điện tử VnMart</option>
+                    <option value="VIETINBANK">Ngân hàng Vietinbank  </option>
+                    <option value="VIETCOMBANK">Ngân hàng VCB </option>
+                    <option value="HDBANK">Ngân hàng HDBank</option>
+                    <option value="DONGABANK">Ngân hàng Dong A</option>
+                    <option value="TPBANK">Ngân hàng TPBank </option>
+                    <option value="OJB">Ngân hàng OceanBank</option>
+                    <option value="BIDV">Ngân hàng BIDV </option>
+                    <option value="TECHCOMBANK">Ngân hàng Techcombank </option>
+                    <option value="VPBANK">Ngân hàng VPBank </option>
+                    <option value="AGRIBANK">Ngân hàng Agribank </option>
+                    <option value="MBBANK">Ngân hàng MBBank </option>
+                    <option value="ACB">Ngân hàng ACB </option>
+                    <option value="OCB">Ngân hàng OCB </option>
+                    <option value="IVB">Ngân hàng IVB </option>
+                    <option value="SHB">Ngân hàng SHB </option>
+                    <option value="MBAPP">Ứng dụng MobileBanking</option>			
+                    <option value="VNPAYQR">VNPAYQR</option>
+                    <option value="VNBANK">LOCAL BANK</option>
+                    <option value="IB">INTERNET BANKING</option>
+                    <option value="ATM">ATM CARD</option>
+                    <option value="INTCARD">INTERNATIONAL CARD</option>
+                    <option value="VISA">VISA</option>
+                    <option value="MASTERCARD"> MASTERCARD</option>
+                    <option value="JCB">JCB</option>
+                    <option value="UPI">UPI</option>
+                    <option value="VIB">VIB</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="language">Ngôn ngữ</label>
+                <select name="language" id="language" class="form-control">
+                    <option value="vn">Tiếng Việt</option>
+                    <option value="en">English</option>
+                </select>
+            </div>
+            <button class="btn btn-primary" name="submit" value="submit" type="submit">Thanh toán Redirect</button>
+        </form>
+    </div>
+    <p>&nbsp;</p>
+    <footer class="footer">
+        <p>&copy; VNPAY 2023</p>
+    </footer>
+</div> <!-- /container -->
+<!-- Bootstrap core JavaScript -->
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+</html>
